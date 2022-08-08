@@ -1,0 +1,130 @@
+@import url(../base/stup.css);
+body{
+    overflow: hidden;
+    background-image: url('/sources/images/josephine-bredehoft-KsAo8ouBn8A-unsplash\ 1.png');
+}
+
+.main{
+    position: relative;
+    min-height:100vh;
+    min-width:100vw;
+}
+
+.sheet{
+    position:absolute;
+
+    display: grid;
+    place-items:center;
+
+    font-size:1.55rem;
+    text-align: center;
+
+    height:38%;
+    width:35%;
+
+    box-shadow: -2ch 2ch 1ch;
+}
+
+/*Tackica na vrhu kartica*/
+.sheet:before{
+    z-index: 2;
+
+    content:'';
+
+    background-color: black;
+
+    height:10px;
+    aspect-ratio: 1/1;
+
+    border-radius: 2em;
+}
+
+.sheet:after{
+    content: var(--cnt-behind);
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    place-items: center;
+    padding:1rem;
+    
+    color:transparent;
+
+    transition: all .25s linear;
+}
+
+.sheet:hover:after{
+    color:inherit;
+    background-color: inherit;
+}
+
+
+.hotpinkS{
+    --cnt-behind: 'A coded message. What could it be?';
+
+    top: 30%;
+    left: 30%;
+    background-color:#E52E9C;
+}
+
+.purpleS{
+    --cnt-behind: 'Serbia! A place I come from';
+
+    bottom: 7%;
+    right: 2%;
+    transform: rotate(-12.58deg);
+    background-color:#692EE5;
+}
+
+.greenS{
+    --cnt-behind: 'The year this beast of a software developer and engineer was born in';
+
+    z-index: 1;
+    top: 10%;
+    transform:rotate(-24.41deg);
+    background-color:#2EE535;
+}
+
+.blueS{
+    --cnt-behind: 'Guess you now know my favourite band :D';
+
+    top: 7%;
+    right:1.5%;
+    transform:rotate(12deg);
+    background-color:#2EDAE5;
+}
+
+.credit{
+    position: absolute;
+    mix-blend-mode: overlay;
+    font-size:2rem;
+    bottom: 5%;
+    left: 5%;
+    color: #535353;
+    transform: rotate(30deg);
+}
+
+@media screen and (max-width: 720px){
+    .sheet{
+        font-size: 1rem;
+        width: 60%;
+        height: 25%;
+    }
+    
+    .greenS{
+        top: 0;
+    }
+
+    .blueS{
+        top:20%;
+    }
+
+    .hotpinkS{
+        top: 40%;
+        left: 10%;
+    }
+
+    .credit{
+        z-index: -1;
+    }
+}

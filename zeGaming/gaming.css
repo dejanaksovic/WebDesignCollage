@@ -1,0 +1,163 @@
+@import url('../base/stup.css');
+
+body{
+    background: #141414;
+}
+
+.Title{
+    background-color: rgba(255,0,0,0.1);
+    color:white;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.Main{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    min-height: 70vh;
+
+    place-items:center;
+}
+
+.MainText{
+    padding: 0 2rem;
+    margin: 0 2rem;
+    font-size: 1.25rem;
+    background-color: #EAEAEA;
+    grid-column: 1/4;
+}
+
+button{
+    border: 2px solid red;
+    padding: 2rem;
+    border-radius: 6rem;
+    transition: all .15s linear;
+}
+
+button:hover{
+    transform: scale(1.25);
+    cursor:pointer;
+}
+
+.redSpan{
+    color:red;
+    font-size: 1.25em;
+}
+
+.red{
+    background-color: red;
+    transform: scale(1.25);
+}
+
+.black{
+    background-color:black;
+    transform: translateY(-20%);
+}
+
+/*Igra*/
+.engine{
+    overflow:hidden;
+}
+
+.gameBody{
+    margin: 0 auto;
+    border-radius: .5rem;
+    padding: 1rem;
+    width: 80vw;
+    height:95vh;
+    background-color:#EAEAEA;
+}
+
+.Hero{
+    display: grid;
+    place-items:center;
+    gap: 1rem;
+    margin: 0 0 1rem 0;
+}
+
+.HeroHelp{
+    border: 3px solid black;
+    border-radius: 4em;
+    font-size: 1.3rem;
+    font-weight:bolder;
+    margin: 0;
+    padding: 2rem;
+    height: 10%;
+    aspect-ratio: 1/1;
+}
+
+.HeroHelp:hover{
+    transform: scale(1);
+}
+
+.flexInput{
+    display: flex;
+    gap: 1rem;
+}
+
+.HeroInput{
+    width:30%;
+    height:4ch;
+    align-self: flex-end;
+}
+
+.done{
+    flex: 2;
+    height:auto;
+    width:auto;
+    border-radius: 0 32px 32px 0;
+    border:none;
+}
+
+.done:hover{
+    transform: scale(1);
+}
+
+.Accept{
+    background-color: green;
+}
+
+.Decline{
+    background-color:yellow;
+}
+
+.HeroImage{
+    max-width: 90%;
+    margin: 0 auto;
+    height: 200px;
+}
+
+.HeroImgContainer{
+    display:grid;
+    place-items:center;
+}
+
+
+@media screen and (min-width: 720px){
+    .Main{
+        grid-template-rows: 1fr 1fr 1fr ;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    button{
+        height:8rem;
+        aspect-ratio: 1/1;
+    }
+
+    .MainText{
+        grid-row: 1/4;
+        grid-column: 2;
+        align-self: stretch;
+    }
+
+    .red{
+        transform: scale(1);
+    }
+
+    .black{
+        transform: scale(1);
+    }
+
+}

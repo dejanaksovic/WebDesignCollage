@@ -1,0 +1,159 @@
+
+@import "./base/stup.css";
+/*Default postavke koje mi trebaju. Pr. da linkovi nemaju underline ili nisu plavi podefaultu*/
+body{
+    position:relative;
+    background-color: var(--clr-primary);
+    padding:0;
+    margin: 0;
+}
+
+img{
+    height:100%;
+}
+
+nav{
+    color:white;
+    position:absolute;
+    top:0;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    width:100%;
+    background-color: rgba(0, 0, 0, 80%);
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+    gap: 1.25rem;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.heroUpper{
+    color: white;
+    background-image: url("./sources/images/FavBackgroundPhone.jpg");
+    min-height: 100vh;
+    display:grid;
+    grid-template-rows: 70% 15% 15%;
+    place-items:center;
+}
+
+.Puppy{
+    border-radius: 2rem;
+    border:none;
+    font-size: 3rem;
+    font-weight: bold;
+    color:inherit;
+    padding: .5em 1.25em;
+    background-color: hsl(0, 0%, 10%);
+}
+
+.heroUpper h2{
+    display: grid;
+    place-items: center;
+    font-size: 2.75rem;
+    color:black;
+    background-color: var(--clr-primary);
+    width:70%;
+    text-align: center;
+    align-items: end;
+    height: 100%;
+}
+
+.heroUpper h3{
+    display:grid;
+    justify-items: center;
+    align-items: end;
+    width:100%;
+    height: 100%;
+    background-color:var(--clr-primary);
+    color: rgba(0, 0, 0, 50%);
+}
+
+.heroLower{
+    margin-top: 2rem;
+    font-size:1.5rem;
+    position: relative;
+    height:100vh;
+    width: 100vw;
+}
+
+.heroLower h3{
+    text-align: center;
+}
+
+.gridContainer{
+    font-size: 1rem;
+    margin: 0 auto;
+    width: 80%;
+    gap: 1.25rem;
+    display: grid;
+}
+
+.techonologyIcon{
+    width: 90px;
+    height: 90px;
+}
+
+.gridItem{
+    display:grid;
+    place-items:center;
+    border-radius: 2em;
+    text-align: center;
+}
+
+.Html{
+    background-color: hsl(40, 93%, 60%);
+}
+
+.Css{
+    background-color: hsl(230, 93%, 63%);
+}
+
+.Js{
+    background-color: hsl(68, 93%, 60%);
+}
+
+.helper{
+    display:flex;
+
+}
+
+.helper div{
+    flex: 1;
+}
+
+.helper img{
+    flex: 1;
+}
+
+.Vue{
+    background-color: hsl(126, 93%, 60%);
+}
+
+@media screen and (min-width: 720px) {
+    nav{
+        grid-template-columns: 1fr;
+        place-items:center;
+    }
+
+    ul{
+        flex-direction: row;
+        gap: 4rem;
+    }
+
+    .gridContainer{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    
+    .Vue{
+        grid-row: 1/3;
+        grid-column: 3;
+    }
+
+    .Js{
+        grid-column: 1/3;
+    }
+}

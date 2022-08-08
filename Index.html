@@ -4,9 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>TEST</h1>
+    <div id="app">
+        <nav>
+            <img v-if="!isNavOpen" @click="isNavOpen=!isNavOpen" src="./sources/icons/bars-solid 1.svg" alt="phonenavbar">
+            <ul v-if="isNavOpen">
+                <li><a href="MeetMe/MeetMe.html">Meet me</a></li>
+                <li><a href="#">ZeGaming</a></li>
+                <li><a href="#">Write to us</a></li>
+            </ul>
+        </nav>
+        <section class="heroUpper">
+            <button class="Puppy">CUTE PUP</button>
+            <h2>Just a website</h2>
+            <h3>Simple yet effective way</h3>
+        </section>
+    <section class="heroLower">
+        <h3>To show off my skills in these categories</h3>
+        <div class="gridContainer">
+            <div class="gridItem Html ">
+                <h2>HTML</h2>
+                <p>Use of semantic and generic tags for the best layout possible</p>
+                <img class="techonologyIcon" src="./sources/icons/code-solid 1.svg" alt="HtmlSign">
+            </div>
+            <div class="gridItem Css">
+                <h2>CSS</h2>
+                <p>Add props to those tags to make them look nice. As well as some simple animations</p>
+                <img class="techonologyIcon" src="./sources/icons/css3-alt-brands 1.svg" alt="CssLogo">
+            </div>
+            <div class="gridItem Js">
+                <div class="helper">
+                    <div>
+                        <h2>JAVA SCRIPT</h2>
+                        <p>One of the most common and widley used programming languages. Huge power but a lot to learn. Adding interaction</p>
+                    </div>
+                    <img class="techonologyIcon" src="./sources/icons/js-square-brands 1.svg" alt="JsLogo">
+                </div>
+            </div>
+            <div class="gridItem Vue">
+                <h2>VUE JS</h2>
+                <p>Of course spicing it up with a framework. Adding some interaction that would be really hard implementing with plain js</p>
+                <img class="techonologyIcon" class="techonologyIcon" src="./sources/icons/vuejs-brands 1.svg" alt="vueIcon">
+            </div>
+        </div>
+    </section>
+</div>
+<script src="https://unpkg.com/vue@3"></script>
+<script src="app.js">
+
+</script>
 </body>
 </html>

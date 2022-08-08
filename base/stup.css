@@ -1,0 +1,10 @@
+:root{
+    --clr-primary: hsl(195, 60%, 80%);
+}
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color:inherit;
+}
