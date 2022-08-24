@@ -1,5 +1,5 @@
 
-@import "./base/stup.css";
+@import "./base/setup.css";
 /*Default postavke koje mi trebaju. Pr. da linkovi nemaju underline ili nisu plavi podefaultu*/
 body{
     position:relative;
