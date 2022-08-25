@@ -1,10 +1,3 @@
-const {createApp}= Vue
-createApp({
-    data(){
-        return{
-            message:"Hello there!",
-            isNavOpen: false,
-        }
-    }
-}).mount('#app')
+import {doNav} from './base/setup.js'
 
+doNav()

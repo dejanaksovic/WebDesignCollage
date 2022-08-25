@@ -1,5 +1,3 @@
-//Samo na hoveru menjam tekst 
+import {doNav} from '../base/setup.js';
 
-let a= document.querySelectorAll('h2');
-
-console.log(a[0].textContent);
+doNav()

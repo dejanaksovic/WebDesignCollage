@@ -9,7 +9,61 @@
     box-sizing: border-box;
 }
 
+/* Navbar stvari */
 a {
     text-decoration: none;
     color: inherit;
+}
+
+nav{
+    z-index:10;
+    color:white;
+    position:absolute;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    width:100%;
+    background-color: rgba(0, 0, 0, 80%);
+}
+
+ul{
+    display:none;
+    list-style-type: none;
+    gap: 1.25rem;
+    flex-direction: column;
+}
+
+li{
+    transition:all .2s linear;
+}
+
+li:hover{
+    color:purple;
+    font-size:1.1rem;
+    font-weight: 600;
+}
+
+img{
+    margin: .5rem;
+}
+
+@media screen and (min-width: 720px) {
+    nav{
+        grid-template-columns: 1fr;
+        place-items:center;
+    }
+
+    .phoneNav{
+        display:none;
+    }
+
+    ul{
+        display:flex;
+        flex-direction: row;
+        gap: 4rem;
+    }
+
+}
+
+.on{
+    display:flex;
 }

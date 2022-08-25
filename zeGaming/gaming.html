@@ -8,8 +8,17 @@
     <title>GULAG</title>
 </head>
 <body>
+    <nav>
+        <img class="phoneNav" src="../sources/icons/bars-solid 1.svg" alt="phonenavbar">
+        <ul class="desktopNav">
+            <li><a href="../MeetMe/MeetMe.html">Meet me</a></li>
+            <li><a href="../zeGaming/gaming.html">ZeGaming</a></li>
+            <li><a href="#">Write to us</a></li>
+        </ul>
+    </nav>
 <div id="app">
-    <div class="intro" v-if="!isGameOn">
+
+    <div class="intro" v-if="gameState==0">
         <div class="Title"><h1>Gulag game </h1></div>
         <div class="Main">
             <div class="MainText">
@@ -17,61 +26,82 @@
                     Welcome to the  <span class="redSpan">trial</span>
                 </h2>
                 <p>
-                    Dare to take this challange?<br>
+                    <span>Dare to take this challange?</span><br>
                     If you succseed you will be awarded the greatest title one can achieve: "<span class="redSpan">A COMRADE</span>"
                     <br>
                     But if you fail, you will be sent to the gulag with the rest of filthy capitalists being forced to work for others your entire life without getting compensated failry (yeah, right)
                 </p>
             </div>
-            <div class="Rules">
-                <button class="black">
+                <button class="interaction rules" @click="gameState=-1">
                     <img src="../sources/icons/question-mark.png" alt="">
                 </button>
-            </div>
-            <div class="Play">
-                <button @click="SelectRandom" class="red">
-                    <img src="../sources/icons/play-btn.png" alt="">
+                <button class="interaction play" @click="StartGame">
+                    <img src="../sources/icons/play-btn.png" alt="PlayButton">
                 </button>
-            </div>
-            <div class="Options">
-                <button class="black">
-                    <img src="../sources/icons/gear-solid 3.png" alt="">
-                </button>
-            </div>
+
         </div>
     </div>
 
-    <div class="engine">
+    <div class="engine" v-if="gameState==1" @load="SelectRandom">
         <div class="gameBody">
             <p>Points {{currPoints}}</p>
             <div class="Hero">
-                <div class="HeroImgContainer">
+                <div class="HeroImgContainer fullGrid">
                     <img class="HeroImage" :src=imgFlag alt="">
                 </div>
-                <button class="HeroHelp HelpRegion">
-                    !
-                </button>
-                <button @click="SelectRandom" class="HeroHelp HelpCapital">
-                    !
-                </button>
-                <button class="HeroHelp HelpFirstLetter">
-                    !
-                </button>
+                    <div class="hint-container fullGrid">
+                        <button class="HeroHelp HelpRegion" @click="GiveHint(0)">
+                            !
+                        </button>
+                        <p class="hint" v-if="isHintOn[0]">{{hints[0]}}</p>
+                    </div>
+                    <div class="hint-container fullGrid">
+                        <button class="HeroHelp HelpCapital" @click="GiveHint(1)">
+                            !
+                        </button>
+                        <p class="hint" v-if="isHintOn[1]">{{hints[1]}}</p>
+                    </div>
+                    <div class="hint-container">
+                        <button class="HeroHelp HelpFirstLetter" @click="GiveHint(2)" >
+                            !
+                        </button>
+                        <p class="hint" v-if="isHintOn[2]">{{hints[2]}}</p>
+                    </div>
+                    <button class="Answer Accept" @click="CheckAnswer">
+                        ACCEPT
+                    </button>
+                    <input v-model="text" class="HeroInput" type="text">
+                    <button class="Answer Decline" @click="Skip">
+                        NEXT
+                    </button>
             </div>
-            <div class="flexInput">
-                <button class="done Accept">
-                    ACCEPT
-                </button>
-                <input class="HeroInput" type="text">
-                <button class="done Decline">
-                    NEXT
-                </button>
-            </div>
+            
+        </div>
+    </div>
+
+    <div class="ranking" v-if="gameState==2">
+        <p>Your number of points is : {{currPoints}}<p>
+        <h1>You are <span>{{rank}}</span></h1>
+        <div class="choice-wrap">
+            <button @click="StartGame">
+                Start again
+            </button>
+            <button @click="gameState=0" >
+                Back to main
+            </button>
+        </div>
+    </div>
+
+    <div class="rules" v-if="gameState==-1">
+        <h1>RULES</h1>
+        <p>Your goal in this game is to guess the name of the country of which the flag is shown on the screen. Guessing correctly will award you 10 (ten) points, guessing wrongly will take 5 (five) points. You can use up to 3 hitns. Each hint takes away a point. Of course you can always skip the country and u will not be penalized. You have to do 10 guessing, and at the end of those you will be awarded your rank based on the number of points</p>
+        <div class="exit" @click="gameState=0">
+            X
         </div>
     </div>
 
 </div>
     <script src="https://unpkg.com/vue@3"></script>
-    <script src="gaming.js"></script>
+    <script src="gaming.js" type="module"></script>
 </body>
 </html>

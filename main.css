@@ -2,37 +2,17 @@
 @import "./base/setup.css";
 /*Default postavke koje mi trebaju. Pr. da linkovi nemaju underline ili nisu plavi podefaultu*/
 body{
+    overflow-x:hidden;
     position:relative;
     background-color: var(--clr-primary);
     padding:0;
     margin: 0;
 }
 
-img{
-    height:100%;
-}
-
-nav{
-    color:white;
-    position:absolute;
-    top:0;
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    width:100%;
-    background-color: rgba(0, 0, 0, 80%);
-}
-
-ul{
-    list-style-type: none;
-    display: flex;
-    gap: 1.25rem;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
 .heroUpper{
     color: white;
     background-image: url("./sources/images/FavBackgroundPhone.jpg");
+    background-size:cover;
     min-height: 100vh;
     display:grid;
     grid-template-rows: 70% 15% 15%;
@@ -72,11 +52,10 @@ ul{
 }
 
 .heroLower{
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-size:1.5rem;
     position: relative;
-    height:100vh;
-    width: 100vw;
+    padding: 1rem;
 }
 
 .heroLower h3{
@@ -91,16 +70,25 @@ ul{
     display: grid;
 }
 
-.techonologyIcon{
-    width: 90px;
-    height: 90px;
+.gridContainer img{
+    height:10ch;
+    width:10ch;
 }
 
 .gridItem{
-    display:grid;
-    place-items:center;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+    padding:0 1rem;
     border-radius: 2em;
     text-align: center;
+    transition: transform .1s linear;
+}
+
+.gridItem:hover{
+    cursor:pointer;
+    transform:scale(1.1);
 }
 
 .Html{
@@ -117,7 +105,7 @@ ul{
 
 .helper{
     display:flex;
-
+    align-items: center;
 }
 
 .helper div{
@@ -133,15 +121,6 @@ ul{
 }
 
 @media screen and (min-width: 720px) {
-    nav{
-        grid-template-columns: 1fr;
-        place-items:center;
-    }
-
-    ul{
-        flex-direction: row;
-        gap: 4rem;
-    }
 
     .gridContainer{
         grid-template-columns: 1fr 1fr 1fr;
