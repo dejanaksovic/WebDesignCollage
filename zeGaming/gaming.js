@@ -1,4 +1,4 @@
-import {doNav} from '../base/setup.js'
+
 
 const app= Vue.createApp({
     data(){
