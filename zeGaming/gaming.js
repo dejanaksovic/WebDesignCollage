@@ -1,5 +1,3 @@
-
-
 const app= Vue.createApp({
     data(){
         return {
@@ -101,4 +99,9 @@ helpbuttons.forEach((item)=>{
     })
 })
 
-doNav()
+
+let navText=document.querySelector("ul")
+
+document.querySelector(".phoneNav").addEventListener("click", e=>{
+    navText.classList.toggle("on")
+})

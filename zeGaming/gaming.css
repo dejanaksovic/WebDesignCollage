@@ -6,6 +6,7 @@ body{
     display: grid;
     place-items:center;
     background: #141414;
+    overflow-y:scroll;
 }
 
 #app{
@@ -85,7 +86,7 @@ img{
 
 /*Igra*/
 .engine{
-    overflow:hidden;
+    overflow-y:scroll;
 }
 
 .gameBody{

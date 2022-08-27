@@ -25,26 +25,26 @@
                     </defs>
                 </svg>
             </a></li>
-            <li><a href="../MeetMe/MeetMe.html">Meet me</a></li>
-            <li><a href="../zeGaming/gaming.html">ZeGaming</a></li>
-            <li><a href="../write_to_us/write.html">Write to us</a></li>
-            <li><a href="../Filler_page/filler.html">Slide Show</a></li>
+            <li><a href="../MeetMe/MeetMe_serbian.html">Meet me</a></li>
+            <li><a href="../zeGaming/gaming_serbian.html">ZeGaming</a></li>
+            <li><a href="../write_to_us/write_serbian.html">Write to us</a></li>
+            <li><a href="../Filler_page/filler_serbian.html">Slide show</a></li>
         </ul>
     </nav>
 <div id="app">
 
     <div class="intro" v-if="gameState==0">
-        <div class="Title"><h1>Gulag game </h1></div>
+        <div class="Title"><h1>Igra gulaga </h1></div>
         <div class="Main">
             <div class="MainText">
                 <h2>
-                    Welcome to the  <span class="redSpan">trial</span>
+                    Dobro došli u <span class="redSpan">test</span>
                 </h2>
                 <p>
-                    <span>Dare to take this challange?</span><br>
-                    If you succseed you will be awarded the greatest title one can achieve: "<span class="redSpan">A COMRADE</span>"
+                    <span>Smete li da prihvatite izazov?</span><br>
+                   Ako uspete, dobićete najvredniju titulu koju neko može da poseduje "<span class="redSpan">DRUG</span>"
                     <br>
-                    But if you fail, you will be sent to the gulag with the rest of filthy capitalists being forced to work for others your entire life without getting compensated failry (yeah, right)
+                    Ali ako ne uspete bićete primorani da do kraja života radite kao jedan od radnika kapitalista
                 </p>
             </div>
                 <button class="interaction rules" @click="gameState=-1">
@@ -59,7 +59,7 @@
 
     <div class="engine" v-if="gameState==1" @load="SelectRandom">
         <div class="gameBody">
-            <p>Points {{currPoints}}</p>
+            <p>Poeni {{currPoints}}</p>
             <div class="Hero">
                 <div class="HeroImgContainer fullGrid">
                     <img class="HeroImage" :src=imgFlag alt="">
@@ -95,21 +95,21 @@
     </div>
 
     <div class="ranking" v-if="gameState==2">
-        <p>Your number of points is : {{currPoints}}<p>
-        <h1>You are <span>{{rank}}</span></h1>
+        <p>Vaš broj poena je : {{currPoints}}<p>
+        <h1>Vi ste <span>{{rank}}</span></h1>
         <div class="choice-wrap">
             <button @click="StartGame">
-                Start again
+                Započni ponovo
             </button>
             <button @click="gameState=0" >
-                Back to main
+                Nazad na stranu
             </button>
         </div>
     </div>
 
     <div class="rules" v-if="gameState==-1">
         <h1>RULES</h1>
-        <p>Your goal in this game is to guess the name of the country of which the flag is shown on the screen. Guessing correctly will award you 10 (ten) points, guessing wrongly will take 5 (five) points. You can use up to 3 hitns. Each hint takes away a point. Of course you can always skip the country and u will not be penalized. You have to do 10 guessing, and at the end of those you will be awarded your rank based on the number of points</p>
+        <p>Vaš cilj je da pogodite ime države čija je zastava prikazana. Tačan pogodak vam daje 10 poena, a pogrešan vam oduzima 5. Možete da koristite do 3 pomoći. Svaka pomoć vam skida po jedan bod. Naravno uvek možete preskočiti državu i ne dobiti nikakve negativne bodove. Prikazaće vam se 10 država nakon čega će vam biti dat rank na osnovu poena</p>
         <div class="exit" @click="gameState=0">
             X
         </div>
@@ -118,8 +118,8 @@
 </div>
 <footer>
     <p>Dejan Aksović D.O.O</p>
-    <a href="gaming_serbian.html">
-        <p>ENG</p>
+    <a href="gaming.html">
+        <p>SRB</p>
     </a>
 </footer>
     <script src="https://unpkg.com/vue@3"></script>

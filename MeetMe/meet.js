@@ -1,3 +1,5 @@
-import {doNav} from '../base/setup.js';
+let navText=document.querySelector("ul")
 
-doNav()
+document.querySelector(".phoneNav").addEventListener("click", e=>{
+    navText.classList.toggle("on")
+})

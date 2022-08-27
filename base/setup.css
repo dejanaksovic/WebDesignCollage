@@ -9,16 +9,57 @@
     box-sizing: border-box;
 }
 
+body{
+    overflow:hidden;
+    
+}
 /* Navbar stvari */
 a {
     text-decoration: none;
     color: inherit;
 }
 
+footer{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    padding: 0 1rem;
+    font-size:.5rem;
+    background-color:black;
+    color:white;
+    font-weight: 400;
+}
+
+footer * {
+    margin: 0;
+    display:inline-block;
+}
+
+footer *:nth-child(2){
+    margin-left:90%;
+    border-radius:50% ;
+}
+
+footer *:nth-child(2):hover{
+    cursor:pointer;
+}
+
+.favLogo{
+    margin: .2rem 0 0 .2rem;
+    position:absolute;
+    bottom:0;
+    right:0;
+    height:3rem;
+    width:3rem;
+}
+
 nav{
     z-index:10;
     color:white;
     position:absolute;
+    top:0;
+    left:0;
     display:grid;
     grid-template-columns: 1fr 1fr;
     width:100%;
@@ -50,6 +91,11 @@ img{
     nav{
         grid-template-columns: 1fr;
         place-items:center;
+    }
+
+    .favLogo{
+        top:0;
+        left:0;
     }
 
     .phoneNav{
